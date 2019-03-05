@@ -7,7 +7,7 @@ module.exports = {
         ['link', { rel: 'icon', href: 'img/myBlog.png' }]
     ],
     description: '明月装饰了你的窗子，你装饰了别人的梦。', //描述
-    dest: './dist',   // 设置输出目录
+    dest: './docs/.vuepress/dist',   // 设置输出目录
     port: 8080, //端口
     themeConfig: { //主题配置
         // 添加导航栏
