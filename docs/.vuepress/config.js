@@ -1,0 +1,42 @@
+/**
+ * Created by DemoHui on 2019/3/5.
+ */
+module.exports = {
+    title: 'DemoHui', // 设置网站标题
+    head: [
+        ['link', { rel: 'icon', href: 'img/myBlog.png' }]
+    ],
+    description: '明月装饰了你的窗子，你装饰了别人的梦。', //描述
+    dest: './dist',   // 设置输出目录
+    port: 8080, //端口
+    themeConfig: { //主题配置
+        // 添加导航栏
+        nav: [
+            { text: '主页', link: '/' }, // 导航条
+            { text: '知识库', link: '/libraryComponents/' },
+            { text: '笔记', link: '/notes/' },
+            { text: '随笔', link: '/essay/' },
+            { text: 'github',link:''}
+        ],
+        // 为以下路由添加侧边栏
+        sidebar:{
+            '/libraryComponents/': [
+                {
+                    title: 'JavaScript',
+                    collapsable: false,
+                    children: []
+                },
+                {
+                    title: 'Vue',
+                    collapsable: false,
+                    children: []
+                },
+                {
+                    title: 'Element-ui',
+                    collapsable: false,
+                    children: []
+                },
+            ],
+        }
+    }
+};
