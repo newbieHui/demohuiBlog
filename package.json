@@ -12,8 +12,8 @@
   "devDependencies": {},
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "docs:build": "vuepress build docs"
+    //"deploy": "bash deploy.sh"
   },
   "author": "szhui",
   "license": "ISC"
