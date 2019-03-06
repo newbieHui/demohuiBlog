@@ -13,18 +13,21 @@ module.exports = {
         // 添加导航栏
         nav: [
             { text: '主页', link: '/' }, // 导航条
-            { text: '知识库', link: '/libraryComponents/' },
-            { text: '笔记', link: '/notes/' },
-            { text: '随笔', link: '/essay/' },
+            { text: '前端库', link: '/webLibrary/' },
+            { text: '项目库', link: '/notes/' },
+            { text: '随笔库', link: '/essay/' },
             { text: 'github',link:''}
         ],
         // 为以下路由添加侧边栏
         sidebar:{
-            '/libraryComponents/': [
+            '/webLibrary/': [
                 {
                     title: 'JavaScript',
-                    collapsable: false,
-                    children: []
+                    collapsable: true,
+                    children: [
+                        'childrenLibrary/dateChange',
+                        'childrenLibrary/commonAlgorithm'
+                    ]
                 },
                 {
                     title: 'Vue',
