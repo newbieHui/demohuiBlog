@@ -26,7 +26,8 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'childrenLibrary/dateChange',
-                        'childrenLibrary/commonAlgorithm'
+                        'childrenLibrary/commonAlgorithm',
+                        'childrenLibrary/prototypeChain'
                     ]
                 },
                 {
