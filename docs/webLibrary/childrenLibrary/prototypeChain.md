@@ -72,8 +72,7 @@ ___
 Object.prototype.__proto__ === null  // true
 ```
 已经到顶了，为null。
-
-![prototype](/img/proto.png)
+![proto](/img/proto.png)
 
 实例对象和构造函数都可以指向原型。
 
@@ -85,7 +84,7 @@ function Person() {
 }
 console.log(Person === Person.prototype.constructor);   // true
 ```
-![prototype](/img/constructor.png)
+![constructor](/img/constructor.png)
 ```js
 function Person() {
 
@@ -160,6 +159,6 @@ console.log(demo2.name);   //szh
 属性的，这时就会从demo1的原型demo1.__proto__(也就是Person.prototype)中查找。
 
 所以总的关系图如下图所示，图中由相互关联的原型组成的链状结构就是原型链，也就是图中黑色的线：
-![prototype](/img/prototypeChain.png)
+![prototypeChain](/img/prototypeChain.png)
 
 > 2019/3/7 17:50
