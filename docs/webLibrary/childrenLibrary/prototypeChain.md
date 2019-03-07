@@ -72,7 +72,9 @@ ___
 Object.prototype.__proto__ === null  // true
 ```
 已经到顶了，为null。
+
 ![prototype](/img/proto.png)
+
 实例对象和构造函数都可以指向原型。
 
 ### 4.`constructor`：
