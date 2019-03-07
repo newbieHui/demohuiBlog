@@ -16,7 +16,7 @@ module.exports = {
             { text: '前端库', link: '/webLibrary/' },
             { text: '项目库', link: '/notes/' },
             { text: '随笔库', link: '/essay/' },
-            { text: 'github',link:''}
+            { text: 'github',link:'https://github.com/newbieHui'}
         ],
         // 为以下路由添加侧边栏
         sidebar:{
