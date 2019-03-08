@@ -17,7 +17,7 @@ console.log(demo.name);   // szhui
 上面这个例子中，Person就是一个构造函数，demo是我们使用new创建的一个实例对象。
 
 ### 2.`prototype`：
-在JavaScript中，每一个JavaScript对象(null)和另一个对象相关联，而这'另一个'对象就是这里要说的原型，每一个对象都从其原型继承属性。
+在JavaScript中，每一个JavaScript对象(null除外)和另一个对象相关联，而这'另一个'对象就是这里要说的原型，每一个对象都从其原型继承属性。
 
 所有通过对象直接量创建的对象都具有同一个原型对象，可以通过`Object.prototype`获得原型对象的引用。使用关键字new和构造函数调用调用创建的对象原型就是构造函数
 的prototype属性的值。所以，和使用{}创建对象一样，通过new Object()创建的对象继承自Object.prototype；通过new Array()创建的对象原型是Array.prototype；通过

@@ -28,7 +28,8 @@ module.exports = {
                     children: [
                         'childrenLibrary/dateChange',
                         'childrenLibrary/commonAlgorithm',
-                        'childrenLibrary/prototypeChain'
+                        'childrenLibrary/prototypeChain',
+                        'childrenLibrary/direction',
                     ]
                 },
                 {
