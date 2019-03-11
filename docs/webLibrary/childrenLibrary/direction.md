@@ -93,3 +93,50 @@ demo.x()
 
 如上图，在嵌套函数gexX()中，this并不指向demo。嵌套的函数不会从调用它的函数中继承this，当嵌套函数作为函数调用时，其this值在非严格模式下
 指向全局对象，严格模式下为undefined。
+
+### 3.作为构造函数调用：
+1.在构造函数中使用new生成一个新对象，此时，this就指向这个新对象：
+```js
+function demo() {
+	this.x = 1;
+}
+var a = new demo();
+console.log(a.x);   //1
+```
+___
+```js
+var x = 2;
+function demo() {
+  this.x = 1;
+}
+var a = new demo();
+
+console.log(x);   // 2
+```
+由上图代码我们可以看出全局对象x的值并没有改变。
+
+2.如果构造函数返回了一个对象，this 便会指向返回的对象，如果构造函数返回了非引用类型（string，number，boolean，null，undefined），this 仍然指向实例化的新对象：
+```js
+var x = 1
+function Demo() {
+  this.x = 2;
+  return {
+    x: 3
+  }
+}
+var a = new Demo()
+
+console.log(a.x);   // 3
+```
+___
+```js
+var x = 1
+function Demo() {
+  this.x = 2;
+  return 3;
+}
+var a = new Demo();
+
+console.log(a.x);   // 2
+```
+> 2019/3/11 08:35
