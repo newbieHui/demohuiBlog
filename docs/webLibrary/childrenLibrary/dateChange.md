@@ -1,12 +1,16 @@
 # js时间格式转换
 ---
 ### 1.获取今天前或后n天的时间戳:
-    function beforeOrAfterDate(n){
+___
+```js
+function beforeOrAfterDate(n){
         return new Date().getTime() + 3600 * 1000 * 24 * n;
     }
-
+```
 ### 2.将时间戳转换为特定的时间格式('年-月-日'):
-    function getTime(num){
+___
+```js
+function getTime(num){
         if(num == null){
             return '';
         }else {
@@ -23,9 +27,11 @@
             return year + "-" + month + "-" + date;
         }
     }
-
+```
 ### 3.将时间戳转换为特定的时间格式('年-月-日 时:分:秒'):
-    function getDetailTime(num){
+___
+```js
+function getDetailTime(num){
         if(num == null){
             return '';
         }else {
@@ -45,5 +51,6 @@
             return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
         }
     }
+```
 
 > 2019/3/6 16:45

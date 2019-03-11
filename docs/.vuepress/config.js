@@ -40,7 +40,9 @@ module.exports = {
                 {
                     title: 'Element-ui',
                     collapsable: true,
-                    children: []
+                    children: [
+                        'childrenLibrary/formInput',
+                    ]
                 },
             ],
             '/projectLibrary/': [
