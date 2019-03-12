@@ -30,6 +30,7 @@ module.exports = {
                         'childrenLibrary/commonAlgorithm',
                         'childrenLibrary/prototypeChain',
                         'childrenLibrary/direction',
+                        'childrenLibrary/arrayOperation',
                     ]
                 },
                 {
