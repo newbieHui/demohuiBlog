@@ -26,11 +26,11 @@ module.exports = {
                     title: 'JavaScript',
                     collapsable: true,
                     children: [
-                        'childrenLibrary/dateChange',
-                        'childrenLibrary/commonAlgorithm',
-                        'childrenLibrary/prototypeChain',
-                        'childrenLibrary/direction',
-                        'childrenLibrary/arrayOperation',
+                        'jsChildLibrary/dateChange',
+                        'jsChildLibrary/commonAlgorithm',
+                        'jsChildLibrary/prototypeChain',
+                        'jsChildLibrary/direction',
+                        'jsChildLibrary/arrayOperation',
                     ]
                 },
                 {
@@ -39,10 +39,17 @@ module.exports = {
                     children: []
                 },
                 {
+                    title: 'React',
+                    collapsable: true,
+                    children: [
+                        'reactChildLibrary/reactStart',
+                    ]
+                },
+                {
                     title: 'Element-ui',
                     collapsable: true,
                     children: [
-                        'childrenLibrary/formInput',
+                        'elmChildLibrary/formInput',
                     ]
                 },
             ],
@@ -51,7 +58,7 @@ module.exports = {
                     title: 'Vue项目',
                     collapsable: true,
                     children: [
-                        'childrenLibrary/translateOnline'
+                        'vueChildLibrary/translateOnline'
                     ]
                 },
             ],
@@ -60,21 +67,21 @@ module.exports = {
                     title: 'Book',
                     collapsable: true,
                     children: [
-                        'childrenLibrary/book1'
+                        'bookChildLibrary/book1'
                     ]
                 },
                 {
                     title: 'Movie',
                     collapsable: true,
                     children: [
-                        'childrenLibrary/movie1'
+                        'movieChildLibrary/movie1'
                     ]
                 },
                 {
                     title: 'Music',
                     collapsable: true,
                     children: [
-                        'childrenLibrary/music1'
+                        'musicChildLibrary/music1'
                     ]
                 },
             ]
