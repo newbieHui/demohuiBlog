@@ -31,6 +31,7 @@ module.exports = {
                         'jsChildLibrary/prototypeChain',
                         'jsChildLibrary/direction',
                         'jsChildLibrary/arrayOperation',
+                        'jsChildLibrary/es6',
                     ]
                 },
                 {
