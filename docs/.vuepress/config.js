@@ -35,6 +35,13 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'CSS',
+                    collapsable: true,
+                    children: [
+                        'cssChildLibrary/boxModel',
+                    ]
+                },
+                {
                     title: 'Vue',
                     collapsable: true,
                     children: []
