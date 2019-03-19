@@ -70,6 +70,14 @@ module.exports = {
                         'vueChildLibrary/translateOnline'
                     ]
                 },
+                {
+                    title: 'React项目',
+                    collapsable: true,
+                    children: [
+                        'reactChildLibrary/firstReact',
+                        'reactChildLibrary/reactFamilyBucket',
+                    ]
+                },
             ],
             '/essayLibrary/': [
                 {
