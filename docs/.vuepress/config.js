@@ -52,6 +52,7 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'reactChildLibrary/reactStart',
+                        'reactChildLibrary/redux',
                     ]
                 },
                 {
