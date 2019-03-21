@@ -56,6 +56,14 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'webpack',
+                    collapsable: true,
+                    children: [
+                        'webpackChildLibrary/wpBasicConcept',
+                        'webpackChildLibrary/wpBasicUse',
+                    ]
+                },
+                {
                     title: 'Element-ui',
                     collapsable: true,
                     children: [
