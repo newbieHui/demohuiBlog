@@ -32,6 +32,7 @@ module.exports = {
                         'jsChildLibrary/direction',
                         'jsChildLibrary/arrayOperation',
                         'jsChildLibrary/es6',
+                        'jsChildLibrary/object',
                     ]
                 },
                 {
