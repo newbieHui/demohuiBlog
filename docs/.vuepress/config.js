@@ -33,6 +33,7 @@ module.exports = {
                         'jsChildLibrary/arrayOperation',
                         'jsChildLibrary/es6',
                         'jsChildLibrary/object',
+                        'jsChildLibrary/jsValid',
                     ]
                 },
                 {
