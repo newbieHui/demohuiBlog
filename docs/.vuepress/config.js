@@ -72,6 +72,14 @@ module.exports = {
                         'elmChildLibrary/formInput',
                     ]
                 },
+                {
+                    title: '工具库',
+                    collapsable: true,
+                    children: [
+                        'toolChildLibrary/webFrame',
+                        'toolChildLibrary/studyManual',
+                    ]
+                },
             ],
             '/projectLibrary/': [
                 {
