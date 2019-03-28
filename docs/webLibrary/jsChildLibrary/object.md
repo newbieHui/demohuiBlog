@@ -27,3 +27,5 @@ console.log(object2.property1);
 ````
 
 > 2019/3/25 17:35
+
+### 2.Object.defineProperty()：

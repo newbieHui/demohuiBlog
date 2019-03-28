@@ -47,7 +47,9 @@ module.exports = {
                 {
                     title: 'Vue',
                     collapsable: true,
-                    children: []
+                    children: [
+                        'vueChildLibrary/basicConcept',
+                    ]
                 },
                 {
                     title: 'React',
@@ -70,6 +72,13 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'elmChildLibrary/formInput',
+                    ]
+                },
+                {
+                    title: 'Axios',
+                    collapsable: true,
+                    children: [
+                        'axiosChildLibrary/axiosBasicConcept',
                     ]
                 },
                 {
