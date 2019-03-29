@@ -82,11 +82,19 @@ module.exports = {
                     ]
                 },
                 {
+                    title: '跨域',
+                    collapsable: true,
+                    children: [
+                        'domainChildLibrary/crossDomain',
+                    ]
+                },
+                {
                     title: '工具库',
                     collapsable: true,
                     children: [
                         'toolChildLibrary/webFrame',
                         'toolChildLibrary/studyManual',
+                        'toolChildLibrary/codeTool',
                     ]
                 },
             ],
