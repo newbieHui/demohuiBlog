@@ -65,6 +65,7 @@ module.exports = {
                     children: [
                         'webpackChildLibrary/wpBasicConcept',
                         'webpackChildLibrary/wpBasicUse',
+                        'webpackChildLibrary/wpCrossDomain',
                     ]
                 },
                 {
@@ -86,6 +87,14 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'domainChildLibrary/crossDomain',
+                    ]
+                },
+                {
+                    title: '身份认证',
+                    collapsable: true,
+                    children: [
+                        'authenticationChildLibrary/token',
+                        'authenticationChildLibrary/session',
                     ]
                 },
                 {
