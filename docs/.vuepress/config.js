@@ -98,6 +98,13 @@ module.exports = {
                     ]
                 },
                 {
+                    title: '通信加密',
+                    collapsable: true,
+                    children: [
+                        'encryptionChildLibrary/bilateralEncryption',
+                    ]
+                },
+                {
                     title: '工具库',
                     collapsable: true,
                     children: [
