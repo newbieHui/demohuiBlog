@@ -52,6 +52,13 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'Vue Router',
+                    collapsable: true,
+                    children: [
+                        'vueRouterChildLibrary/routeJumpConveyValue',
+                    ]
+                },
+                {
                     title: 'React',
                     collapsable: true,
                     children: [
