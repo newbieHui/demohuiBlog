@@ -49,6 +49,7 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'vueChildLibrary/basicConcept',
+                        'vueChildLibrary/vueCli',
                     ]
                 },
                 {
