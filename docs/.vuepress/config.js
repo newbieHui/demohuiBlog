@@ -52,6 +52,13 @@ module.exports = {
                     ]
                 },
                 {
+                    title: 'Vuex',
+                    collapsable: true,
+                    children: [
+                        'vuexChildLibrary/vuexUseExample',
+                    ]
+                },
+                {
                     title: 'Vue Router',
                     collapsable: true,
                     children: [
