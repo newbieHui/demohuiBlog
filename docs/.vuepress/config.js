@@ -40,6 +40,7 @@ module.exports = {
                     title: 'CSS',
                     collapsable: true,
                     children: [
+                        'cssChildLibrary/basicKnowledge',
                         'cssChildLibrary/boxModel',
                         'cssChildLibrary/elementCenter',
                     ]
@@ -49,6 +50,7 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'vueChildLibrary/basicConcept',
+                        'vueChildLibrary/projectConstruction',
                         'vueChildLibrary/vueCli',
                     ]
                 },
