@@ -51,7 +51,7 @@ module.exports = {
                     children: [
                         'vueChildLibrary/basicConcept',
                         'vueChildLibrary/projectConstruction',
-                        'vueChildLibrary/vueCli',
+                        'vueChildLibrary/npm',
                     ]
                 },
                 {
