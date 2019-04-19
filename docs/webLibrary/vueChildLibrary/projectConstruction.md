@@ -149,7 +149,7 @@ new Vue({
 
 ### 4.平台布局
 
-#### 1.安装
+#### 1.安装Element-ui
 **npm i element-ui -S**
 
 ````js
@@ -173,3 +173,34 @@ new Vue({
     template: '<App/>'
 })
 ````
+
+#### 2.在vue-cli项目中使用icon
+
+**npm install svg-sprite-loader --save-dev**
+
+在webpack.base.conf.js文件中写入如下代码：
+````js
+    {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        exclude: [resolve('src/icons')],   //加入次行代码
+        options: {
+            limit: 10000,
+            name: utils.assetsPath('img/[name].[hash:7].[ext]')
+        }
+    },
+    //写入以下代码
+    {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [resolve('src/icons')],
+        options: {
+            symbolId: 'icon-[name]'
+        }
+    }
+````
+
+在src目录下建立components/SvgIcon/index.vue文件
+
+
+
