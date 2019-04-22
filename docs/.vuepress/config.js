@@ -10,7 +10,7 @@ module.exports = {
     dest: './docs/.vuepress/dist',   // 设置输出目录
     port: 8080, //端口
     themeConfig: { //主题配置
-        logo: '/img/homePage.jpg',
+        logo: '/img/self.jpg',
         // 添加导航栏
         nav: [
             { text: '主页', link: '/' }, // 导航条
