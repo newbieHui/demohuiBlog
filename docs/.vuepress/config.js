@@ -130,6 +130,13 @@ module.exports = {
                         'toolChildLibrary/codeTool',
                     ]
                 },
+                {
+                    title: '计算机网络',
+                    collapsable: true,
+                    children: [
+                        'networkChildLibrary/http'
+                    ]
+                },
             ],
             '/projectLibrary/': [
                 {
