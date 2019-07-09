@@ -42,7 +42,6 @@ module.exports = {
                     children: [
                         'cssChildLibrary/basicKnowledge',
                         'cssChildLibrary/boxModel',
-                        'cssChildLibrary/elementCenter',
                     ]
                 },
                 {
