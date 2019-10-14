@@ -121,19 +121,20 @@ module.exports = {
                     ]
                 },
                 {
+                    title: '计算机网络',
+                    collapsable: true,
+                    children: [
+                        'networkChildLibrary/http'
+                    ]
+                },
+                {
                     title: '工具库',
                     collapsable: true,
                     children: [
                         'toolChildLibrary/webFrame',
                         'toolChildLibrary/studyManual',
                         'toolChildLibrary/codeTool',
-                    ]
-                },
-                {
-                    title: '计算机网络',
-                    collapsable: true,
-                    children: [
-                        'networkChildLibrary/http'
+                        'toolChildLibrary/interview',
                     ]
                 },
             ],

@@ -76,3 +76,271 @@ controller控制器，是视图和数据模型之间的桥梁，用来处理业�
 仅当子组件完成挂载后，父组件才会挂载。父子组件在data变化中是分别监控的，但是在更新props中的数据是关联的。销毁父组件时，先将子组件销毁后才会销毁父组件。
 
 > 20190328
+
+### 5.常用指令(指令Directives是带有'v-'前缀的特殊特性)
+1.v-cloak、v-text、v-html、v-bind、v-on
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- v-cloak指令能够解决差值表达式在页面加载时出现变量名的问题-->
+    <p v-cloak> {{ msg }} </p>
+    <!-- 默认v-text没有表达式闪烁问题-->
+    <!-- v-text会覆盖元素原本内容，插值表达式只会替换自己占位符的内容-->
+    <p v-text="msg1"></p>
+    <!-- v-html表达式可以包含html标签-->
+    <p v-html="msg2"></p>
+    <div style="margin-bottom: 15px">
+        <!-- v-bind: 指令用于绑定属性-->
+        <input type="button" value="按钮" v-bind:title="buttonTitle">
+        <!-- v-bind: 指令中可以写合法表达式-->
+        <input type="button" value="按钮" v-bind:title="buttonTitle + '表达式'">
+        <!-- v-bind: 指令可以缩写为:要绑定的属性-->
+        <input type="button" value="按钮" :title="buttonTitle + '表达式'">
+    </div>
+    <div>
+            <!-- v-on: 用于事件绑定，可以缩写为@事件名-->
+            <input type="button" value="按钮" v-on:click="showMeg">
+            <input type="button" value="按钮" @click="showMeg">
+    </div>
+</div>
+<script src="../lib/vue.js"></script>
+<script>
+    var vm =new Vue({
+        el:'#app',
+        data:{
+            msg:'插值表达式',
+            msg1:'v-text指令',
+            msg2:'<h1>v-html指令</h1>',
+            buttonTitle:'这是一个按钮提示'
+        },
+        methods:{
+            showMeg:function(){
+                alert('点击按钮显示提示信息');
+            }
+        }
+    })
+</script>
+</body>
+</html>
+````
+
+2.实现跑马灯效果
+
+![strMove](/img/strMove.png)
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯</title>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="开始滚动" @click="startRoll">
+    <input type="button" value="停止滚动" @click="stopRoll">
+    <div>
+        <h3>{{ msg }}</h3>
+    </div>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'这是一个跑马灯效果！',
+            str:null
+        },
+        methods:{
+            /** 在vm实例中，如果想要获取data中的数据或methods中的方法需要使用this*/
+            startRoll(){
+                // var __this = this;
+                // this.str = setInterval(function(){
+                //     __this.msg = __this.msg.substring(1,__this.msg.length) + __this.msg.substring(0,1);
+                // },200)
+                if(this.str!=null) return; //防止同时开启多个定时器
+                this.str = setInterval(() => {
+                    this.msg = this.msg.substring(1,this.msg.length) + this.msg.substring(0,1);
+                },200)
+            },
+            stopRoll(){
+                clearInterval(this.str);
+                this.str = null;
+            },
+        }
+    })
+</script>
+</body>
+</html>
+````
+
+3.v-on事件修饰符
+* .stop 阻止冒泡
+* .prevent 阻止默认事件
+* .capture 添加事件侦听器时使用事件捕获模式
+* .self 只当事件在该元素本身触发时触发回调
+* .once 事件只触发一次
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件修饰符</title>
+    <script src="../lib/vue.js"></script>
+    <style>
+        #parentsDiv{
+            height: 300px;
+            width: 500px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- .stop阻止冒泡-->
+    <div id="parentsDiv" @click="parentsEvent">
+        <input type="button" value="按钮" @click.stop="childEvent">
+    </div>
+    <!-- .prevent阻止默认事件-->
+    <!--
+    <a href="http://www.baidu.com" @click.prevent="linkClick">百度一下</a>
+    -->
+    <!-- .capture捕获事件触发机制-->
+    <!--
+        <div id="parentsDiv" @click.capture="parentsEvent">
+            <input type="button" value="按钮" @click="childEvent">
+        </div>
+    -->
+    <!-- .self只有点击当前元素时，才会触发事件处理函数-->
+    <!--
+        <div id="parentsDiv" @click.self="parentsEvent">
+            <input type="button" value="按钮" @click="childEvent">
+        </div>
+    -->
+    <!-- .once事件只触发一次-->
+    <!--
+    <a href="http://www.baidu.com" @click.prevent.once="linkClick">百度一下</a>
+    -->
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{},
+        methods:{
+            childEvent(){
+                console.log('这是子级点击事件！')
+            },
+            parentsEvent(){
+                console.log('这是父级点击事件！')
+            },
+            linkClick(){
+                console.log('阻止超链接默认事件！')
+            }
+        }
+    })
+</script>
+</body>
+</html>
+````
+
+4.v-model双向绑定
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model</title>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- v-bind实现数据单向绑定，M到V-->
+    <div>
+        <input type="text" v-bind:value="msg" style="width: 100%">
+    </div>
+    <!-- v-model可以实现表单元素中的数据双向绑定-->
+    <!-- v-model只能用在表单元素中-->
+    <div>
+        <input type="text" v-model="dynaMsg" style="width: 100%">
+    </div>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'这是一段文字',
+            dynaMsg:'这是一段文字，用来验证数据双向绑定'
+        },
+        methods:{}
+    })
+</script>
+</body>
+</html>
+````
+
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易计算器</title>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="firstNum">
+    <select v-model="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" v-model="secondNum">
+    <input type="button" value="=" @click="calculationNum">
+    <input type="text" v-model="resultNum" disabled>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            firstNum:'0',
+            secondNum:'0',
+            resultNum:'0',
+            operator:'+'
+
+        },
+        methods:{
+            calculationNum(){
+                switch(this.operator){
+                    case '+':
+                        this.resultNum = parseFloat(this.firstNum) + parseFloat(this.secondNum);
+                        break;
+                    case '-':
+                        this.resultNum = parseFloat(this.firstNum) - parseFloat(this.secondNum);
+                        break;
+                    case '*':
+                        this.resultNum = parseFloat(this.firstNum) * parseFloat(this.secondNum);
+                        break;
+                    case '/':
+                        this.resultNum = parseFloat(this.firstNum) / parseFloat(this.secondNum);
+                        break;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
+````
+
