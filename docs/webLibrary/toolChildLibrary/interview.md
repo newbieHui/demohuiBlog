@@ -167,3 +167,164 @@ w.terminate();
 可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的话不存储在
 数据库中，往往表现为将攻击代码放在url地址的请求参数中。防御的话为cookie设置httpOnly属性，对用户的输入进行检查，进行特殊
 字符过滤 。
+
+#### 16.CSS盒模型
+就是用来装页面上的元素的矩形区域。CSS中的盒子模型包括IE盒子模型和标准的W3C盒子模型。
+
+区别：这两种盒子模型最主要的区别就是width的包含范围，在标准的盒子模型中，width指content部分的宽度，在IE盒子模型中，width
+表示content+padding+border这三个部分的宽度，故这使得在计算整个盒子的宽度时存在着差异：
+
+标准盒子模型的盒子宽度：左右border+左右padding+width
+IE盒子模型的盒子宽度：width
+
+在CSS3中引入了box-sizing属性，box-sizing:content-box;表示标准的盒子模型，box-sizing:border-box表示的是IE盒子模型。最后，
+前面我们还提到了，box-sizing:padding-box,这个属性值的宽度包含了左右padding+width也很好理解性记忆，包含什么，width就从什
+么开始算起。
+
+#### 17.Flex布局
+Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。布局的传统解决方案，基于盒状模型，依赖display
+属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。
+
+#### 18.BFC(块级格式化上下文，用于清楚浮动，防止margin重叠等)
+块级格式化上下文，是一个独立的渲染区域，并且有一定的布局规则。BFC区域不会与float box重叠；BFC是页面上的一个独立容器，子
+元素不会影响到外面；计算BFC的高度时，浮动元素也会参与计算。
+
+哪些元素会生成BFC：
+* 根元素
+* float不为none的元素
+* position为fixed和absolute的元素
+* display为inline-block、table-cell、table-caption，flex，inline-flex的元素
+* overflow不为visible的元素
+
+#### 19.元素垂直居中的方法
+1.父元素display:flex,align-items:center;
+
+2.元素绝对定位，top:50%，margin-top：-（高度/2）
+
+3.高度不确定用transform：translateY（-50%）
+
+4.父元素table布局，子元素设置vertical-align:center;
+
+#### 20.实现图片在某个容器中居中
+1.父元素固定宽高，利用定位及设置子元素margin值为自身的一半。
+
+2.父元素固定宽高，子元素设置position: absolute，margin：auto平均分配margin。
+
+3.css3属性transform。子元素设置position: absolute; left: 50%; top: 50%;transform: translate(-50%,-50%);
+
+4.将父元素设置成display: table, 子元素设置为单元格 display: table-cell;
+
+5.弹性布局display: flex。设置align-items: center; justify-content: center;
+
+#### 21.将一个width300，height300实现在屏幕上垂直水平居中
+1.父级元素设置text-align：center，然后设置line-height和vertical-align使其垂直居中，最后设置font-size：0消除近似居中的bug。
+
+2.父级元素设置display：table-cell，vertical-align：middle达到水平垂直居中。
+
+3.采用绝对定位，原理是子绝父相，父元素设置position：relative，子元素设置position：absolute，然后通过transform或margin组
+合使用达到垂直居中效果，设置top：50%，left：50%，transform：translate（-50%，-50%）。
+
+4.绝对居中，原理是当top,bottom为0时，margin-top&bottom设置auto的话会无限延伸沾满空间并平分，当left，right为0时，
+margin-left&right设置auto会无限延伸占满空间并平分。
+
+5.采用flex，父元素设置display：flex，子元素设置margin：auto。
+
+6.视窗居中，vh为视口单位，50vh即是视口高度的50/100，设置margin：50vh auto 0，transform：translate(-50%)
+
+#### 22.块元素和行元素
+块元素：独占一行，并且有自动填满父元素，可以设置margin和padding以及高度和宽度。
+
+行元素：不会独占一行，width和height会失效，并且在垂直方向的padding和margin会失效。
+
+#### 23.双边距重叠问题(外边距折叠)
+多个相邻（兄弟或者父子关系）普通流的块元素垂直方向margin会重叠
+折叠的结果为：
+* 两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。
+
+* 两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。
+
+* 两个外边距一正一负时，折叠结果是两者的相加的和。
+
+#### 24.position属性
+Position属性把元素放置在一个静态的，相对的，绝对的，固定的位置中:
+* Static：位置设置为static的元素，他始终处于页面流给予的位置，static元素会忽略任何top,bottom,left,right声明。
+* Relative：位置设置为relative的元素，可将其移至相对于其正常位置的地方，因此left：20会将元素移至元素正常位置左边20个像素
+的位置。
+* Absolute：此元素可定位于相对包含他的元素的指定坐标，此元素可通过left，top等属性规定。
+* Fixed：位置被设为fixed的元素，可定为与相对浏览器窗口的指定坐标，可以通过left，top，right属性来定位。
+
+#### 25.清除浮动
+1.使用带clear属性的空元素：
+在浮动元素后使用一个空元素，并在CSS中赋予.clear{clear:both;}属性即可清理浮动。
+
+2.使用CSS的overflow属性：
+给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容
+器宽高或设置 zoom:1。在添加overflow属性后，浮动元素又回到了容器层，把容器高度撑起，达到了清理浮动的效果。
+
+3.给浮动的元素的容器添加浮动：
+给浮动元素的容器也添加上浮动属性即可清除内部浮动，但是这样会使其整体浮动，影响布局，不推荐使用。
+
+4.使用邻接元素处理：
+什么都不做，给浮动元素后面的元素添加clear属性。
+
+5.使用CSS的:after伪元素：
+结合:after 伪元素（注意这不是伪类，而是伪元素，代表一个元素之后最近的元素）和 IEhack ，可以完美兼容当前主流的各大浏览器
+，这里的 IEhack 指的是触发 hasLayout。给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素实现元
+素末尾添加一个看不见的块元素（Block element）清理浮动。
+
+#### 26.让一个元素消失
+1.opacity：0，该元素隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能
+触发点击事件。
+
+2.visibility：hidden，该元素隐藏起来了，但不会改变页面布局，但是不会触发该元素已经绑定的事件。
+
+3.display：none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉。
+
+#### 27.line-height和height的区别
+line-height一般是指布局里面一段文字上下行之间的高度，是针对字体来设置的，height一般是指容器的整体高度。
+
+#### 28. inline-block、inline和block的区别
+* block：块级元素，其前后都会有换行符，能设置宽度，高度，margin/padding水平垂直方向都有效。
+* inline：设置width和height无效，margin在竖直方向上无效，padding在水平方向垂直方向都有效，前后无换行符。
+* inline-block：能设置宽度高度，margin/padding水平垂直方向 都有效，前后无换行符。
+
+#### 29.三栏布局
+**三列布局又分为两种，两列定宽一列自适应，以及两侧定宽中间自适应**
+* 两列定宽一列自适应：
+
+1.使用float+margin：
+给div设置float：left，left的div添加属性margin-right：left和center的间隔px,right的div添加属性margin-left：left和center的
+宽度之和加上间隔
+
+2.使用float+overflow：
+给div设置float：left，再给right的div设置overflow:hidden。这样子两个盒子浮动，另一个盒子触发bfc达到自适应
+
+3.使用position：
+父级div设置position：relative，三个子级div设置position：absolute，这个要计算好盒子的宽度和间隔去设置位置，兼容性比较好。
+
+4.使用table实现：
+父级div设置display：table，设置border-spacing：10px//设置间距，取值随意,子级div设置display:table-cell，这种方法兼容性好，
+适用于高度宽度未知的情况，但是margin失效，设计间隔比较麻烦，
+
+5.flex实现：
+parent的div设置display：flex；left和center的div设置margin-right；然后right 的div设置flex：1；这样子right自适应，但是flex
+的兼容性不好。
+
+6、grid实现：
+parent的div设置display：grid，设置grid-template-columns属性，固定第一列第二列宽度，第三列auto，
+
+对于两侧定宽中间自适应的布局，对于这种布局需要把center放在前面，可以采用双飞翼布局：圣杯布局，来实现，也可以使用上述方法
+中的grid，table，flex，position实现。
+
+#### 30.css布局
+六种布局方式总结：圣杯布局、双飞翼布局、Flex布局、绝对定位布局、表格布局、网格布局。
+* 圣杯布局是指布局从上到下分为header、container、footer，然后container部分定为三栏布局。这种布局方式同样分为header、
+container、footer。圣杯布局的缺陷在于 center 是在 container 的padding中的，因此宽度小的时候会出现混乱。
+* 双飞翼布局给center 部分包裹了一个 main 通过设置margin主动地把页面撑开。
+* Flex布局是由CSS3提供的一种方便的布局方式。
+* 绝对定位布局是给container 设置position: relative和overflow: hidden，因为绝对定位的元素的参照物为第一个position不为
+static的祖先元素。 left 向左浮动，right 向右浮动。center 使用绝对定位，通过设置left和right并把两边撑开。 center 设置
+top: 0和bottom: 0使其高度撑开。
+* 表格布局的好处是能使三栏的高度统一。
+* 网格布局可能是最强大的布局方式了，使用起来极其方便，但目前而言，兼容性并不好。网格布局，可以将页面分割成多个区域，或者
+用来定义内部元素的大小，位置，图层关系。
