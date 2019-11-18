@@ -381,7 +381,7 @@ promise、generator、async/await
 判断方法：typeof()，instanceof，Object.prototype.toString.call()等
 
 #### 40.数组常用方法
-push()，pop()，shift()，unshift()，splice()，sort()，reverse()，map()等
+push()，pop()，shift()，unshift()，splice()，sort()，reverse()，map()等。
 
 #### 41.数组去重
 1. indexOf循环去重
