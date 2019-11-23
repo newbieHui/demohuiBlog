@@ -1,20 +1,22 @@
-# 三省
----
+#
+-
 #### 1.http和https
-* http,超文本传输协议，是一个客户端和服务器端请求和应答的标准(TCP)
-* https是以安全为目标的http通道，在http下加入SSL层，https的安全基础是SSL,https的SSL加密是在传输层实现的。https协议的主要
+* http，超文本传输协议，是一个客户端和服务器端请求和应答的标准(TCP)。
+* https，是以安全为目标的http通道，在http下加入SSL层，https的安全基础是SSL，https的SSL加密是在传输层实现的。https协议的主要
 作用是建立一个信息安全通道，确保数据的传输和网站的真实性。
 
 #### 2.HTTP支持的方法
-* GET, POST, HEAD, OPTIONS, PUT, DELETE, TRACE, CONNECT
+* GET(获取资源)，POST(传输实体主体)，HEAD(获得报文首部)， OPTIONS(询问支持的方法)，PUT(传输文件)，DELETE(删除文件)，TRACE
+(追踪路径)，CONNECT(要求用隧道协议连接代理)，LINK(建立和资源之间的联系)，UNLINK)(断开连接关系)。
 
 #### 3.get和post
 * get从指定的资源请求数据；post向指定的资源提交要被处理的数据。
 * get参数通过url传递，post放在request body中。
 * get请求在url中传递的参数是有长度限制的，而post没有。
 * get比post更不安全，因为参数直接暴露在url中，所以不能用来传递敏感信息。
-* get请求只能进行url编码，而post支持多种编码方式。
-* get请求会浏览器主动cache。
+* get请求只能进行url编码，而post支持多种编码方式：1.application/x-www-form-urlencoded；2.multipart/form-data；
+3.application/json；4.text/xml。
+* get请求浏览器会主动cache，在html页面设置meta标签阻止cache：content="no-cache"。
 * get请求参数会被完整保留在浏览历史记录里，而post中的参数不会被保留。
 * get和post本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。
 * get产生一个TCP数据包；post产生两个TCP数据包。
@@ -26,15 +28,15 @@
 * 400，Bad Request，请求语义参数有误。前端提交的数据格式不符合后端规范。
 * 401，Unauthorized，当前请求需要用户验证。
 * 403，Forbidden，服务器收到请求，但拒绝执行。
-* 404, Not Unauthorized，服务器无法根据客户端的请求找到资源(网页)。
+* 404，Not Found，服务器无法根据客户端的请求找到资源(网页)。
 * 500，Internal Server Error，服务器内部错误，无法完成请求。
 * 502，Bad Gateway，作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应。
 * 504，Gateway Time-out，充当网关或代理的服务器，未及时从远端服务器获取请求。
 * 505，HTTP Version not supported，服务器不支持请求的HTTP协议的版本，无法完成处理。
 
-#### 5.cookie、sessionStorage,localStorage
-* cookie,cookie数据始终在同源的http请求中携带，即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自
-动把数据发给服务器，仅在本地保存。cookie数据还有路径(path)的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K
+#### 5.cookie、sessionStorage、localStorage
+* cookie，cookie数据始终在同源的http请求中携带，即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自
+动把数据发给服务器，仅在本地保存。cookie数据还有路径(path)的概念，可以限制cookie只属于某个路径下，存储的大小很小只有4K
 左右。cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。
 * cookie的作用：
 1. 保存用户登录状态：例如将用户id存储于一个cookie内，这样当用户下次访问该页面时就不需要重新登录了。cookie还可以设置过期
@@ -42,20 +44,21 @@
 2. 跟踪用户行为：例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利
 用了cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气
 情况。因为一切都是在后台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便。
-* sessionStorage，仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持，可以保存5M的信息。
+* sessionStorage，仅在当前浏览器窗口 **关闭前** 有效，自然也就不可能持久保持，可以保存5M的信息。
 * localStorage，始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据，可以保存5M的信息。
-* sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage：在所有同源窗口都是共享的；cookie：也是在所有
-同源窗口中共享的。
+
+sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage：在所有同源窗口都是共享的；cookie：也是在所有同
+源窗口中共享的。
 
 #### 6.cookie和session
 1. cookie数据存放在客户的浏览器上，session数据放在服务器上。
 2. cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗，考虑到安全应当使用session。
-3. session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用COOKIE。
+3. session会在一定时间内保存在服务器上。当访问增多，会比较占用服务器的性能，考虑到减轻服务器性能方面，应当使用COOKIE。
 4. 单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
 
 #### 7.cookie如何防范XSS攻击
-XSS（跨站脚本攻击）是指攻击者在返回的HTML中嵌入javascript脚本，为了减轻这些攻击，需要在HTTP头部配上'set-cookie：httponly'
-这个属性可以防止XSS,它会禁止javascript脚本来访问cookie。'secure'这个属性告诉浏览器仅在请求为https的时候发送cookie。
+XSS(跨站脚本攻击)是指攻击者在返回的HTML中嵌入javascript脚本，为了减轻这些攻击，需要在HTTP头部配上'set-cookie：httponly'
+这个属性可以防止XSS，它会禁止javascript脚本来访问cookie。'secure'这个属性告诉浏览器仅在请求为https的时候发送cookie。
 
 #### 8.web worker
 * 当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本执行完成。web worker是运行在后台的js，独立于其他脚本，不会
@@ -111,8 +114,9 @@ w.terminate();
 #### 9.HTML语义化标签
 语义化的标签，旨在让标签有自己的含义。
 1. 代码结构清晰，方便阅读，有利于团队合作开发。
-2. 方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以语义的方式来渲染网页。
-3. 有利于搜索引擎优化（SEO）。
+2. 方便其他设备解析(如屏幕阅读器、盲人阅读器、移动设备)以语义的方式来渲染网页。
+3. 有利于搜索引擎优化(SEO)。
+
 如结构化语义标签：
 ````html
 <header>页眉</header>
@@ -128,16 +132,16 @@ w.terminate();
 ````
 
 #### 10.HTML5新特性
-1. html5为了更好的实践web语义化，增加了header，footer，nav,aside,section,main article figure等语义化标签。
-2. 在表单方面，新的表单控件calender date time email url search。新的input类型 color date datetime datetime-local email。
-3. 在存储方面，提供了sessionStorage，localStorage,和本地离线存储(把需要离线存储在本地的文件列在一个manifest配置文件)，通
+1. html5为了更好的实践web语义化，增加了header、footer、nav、aside、section、main、article、figure等语义化标签。
+2. 在表单方面，新的表单控件calender、date、time、email、url、search。新的input类型 color、date、datetime、datetime-local、email。
+3. 在存储方面，提供了sessionStorage，localStorage和本地离线存储(把需要离线存储在本地的文件列在一个manifest配置文件)，通
 过这些存储方式方便数据在客户端的存储和获取。
 4. 在多媒体方面规定了音频和视频元素audio和video。
 5. 另外还有地理定位，canvas绘图，支持内联SVG，拖放，多线程编程的web worker和websocket协议。
 
 #### 11.CSS3新特性
-1. CSS3边框如border-radius，box-shadow等。
-2. CSS3背景如background-size，background-origin等。
+1. CSS3边框如border-radius、box-shadow等。
+2. CSS3背景如background-size、background-origin等。
 3. CSS3 2D，3D转换如transform等。
 4. CSS3动画如animation等。
 
@@ -149,21 +153,23 @@ w.terminate();
 5. 浏览器解析渲染页面
 6. 连接结束
 
-#### 13.浏览器在生成页面的时候，会生成那两颗树？
-1. 构造两棵树，DOM树和CSSOM规则树。
-2. 当浏览器接收到服务器相应来的HTML文档后，会遍历文档节点，生成DOM树；CSSOM规则树由浏览器解析CSS文件生成。
+#### 13.浏览器是怎么对html进行渲染的？
+1. 解析html，生成dom树。
+2. 根据css文件计算出样式数据。
+3. 结合dom树和css文件，生成渲染树。
+4. 浏览器根据渲染树，将页面绘制到屏幕上。
 
 #### 14.前端优化
-* 降低请求量：合并资源，减少HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。
-* 加快请求速度：预解析DNS，减少域名数，并行加载，CDN 分发。
-* 缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存localStorage。
-* 渲染：JS/CSS优化，加载顺序，服务端渲染，pipeline。
+* 降低请求量：合并资源，减少HTTP请求数，压缩资源文件，lazyLoad。
+* 加快请求速度：预解析DNS，减少域名数，并行加载，CDN分发。
+* 缓存：HTTP协议缓存请求，离线缓存manifest，离线数据缓存localStorage。
+* 渲染：JS/CSS优化，加载顺序，服务端渲染。
 
 #### 15.CSRF和XSS的网络攻击及防范
-1. CSRF：跨站请求伪造，是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS
+1. CSRF：跨站请求伪造(Cross-site request forgery)，是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS
  利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。目前防御 CSRF 攻击主要有三种策略：验证 
  HTTP Referer 字段；在请求地址中添加 token 并验证；在 HTTP 头中自定义属性并验证。
-2. XSS：跨站脚本攻击，是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie，或者其他用户身份信息，
+2. XSS：跨站脚本攻击(Cross Site Scripting)，是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie，或者其他用户身份信息，
 可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的话不存储在
 数据库中，往往表现为将攻击代码放在url地址的请求参数中。防御的话为cookie设置httpOnly属性，对用户的输入进行检查，进行特殊
 字符过滤 。
@@ -196,43 +202,37 @@ Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提�
 * display为inline-block、table-cell、table-caption，flex，inline-flex的元素
 * overflow不为visible的元素
 
-#### 19.元素垂直居中的方法
-1.父元素display:flex,align-items:center;
+#### 19.元素垂直水平居中的方法
+1.display: flex将其定义为弹性容器。align-items: center;定义项目在交叉轴（纵轴）上如何对齐，垂直对齐居中。
+justify-content: center; 定义了项目在主轴上的对齐方式，水平对齐居中。
 
-2.元素绝对定位，top:50%，margin-top：-（高度/2）
+2.display: table使块状元素成为一个块级表格。display: table-cell;子元素设置成表格单元格;vertical-align: middle;使表格内容
+居中显示，即可实现垂直居中的效果。
 
-3.高度不确定用transform：translateY（-50%）
+3.父元素position: relative。子元素position: absolute绝对定位。设置元素的定位位置：left:50%;top:50%;margin: -50px 0 0 -50px;
+这种方式需要知道被垂直居中元素的高和宽，才能计算出margin值，兼容所有浏览器。
 
-4.父元素table布局，子元素设置vertical-align:center;
+4.父元素position: relative，必须有height的值。子元素position: absolute绝对定位。设置元素的定位位置，距离上、下、左、右都
+为0：left:0;right:0;top:0;bottom:0。设置元素的margin样式值为auto：margin:auto。这种方式无需知道被居中元素的高和宽。
 
-#### 20.实现图片在某个容器中居中
-1.父元素固定宽高，利用定位及设置子元素margin值为自身的一半。
+5.父元素position: relative。子元素position: absolute绝对定位。设置元素的定位位置：position: absolute;top: 50%;left: 50%;
+transform: translate(-50%, -50%);利用Css3中的transform，可以轻松的在未知元素的高度的情况下实现元素的垂直居中。
 
-2.父元素固定宽高，子元素设置position: absolute，margin：auto平均分配margin。
+6.单行文本：水平居中：text-align:center;垂直居中：line-height:XXpx; line-height与元素height值一致。
 
-3.css3属性transform。子元素设置position: absolute; left: 50%; top: 50%;transform: translate(-50%,-50%);
+#### 20.将一个div设置半透明
+---
+````css
+div{filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;} 
+````
+1. filter：对IE设置半透明滤镜效果，filter:alpha(Opacity=80)代表该对象80%半透明。
+2. -moz-opacity：对mozilla firefox火狐浏览器实现半透明，-moz-opacity:0.5相当于设置半透明为50%。
+3. opacity：对除IE外所有浏览器支持包括谷歌，opacity: 0.5;表示设置50%半透明。
 
-4.将父元素设置成display: table, 子元素设置为单元格 display: table-cell;
-
-5.弹性布局display: flex。设置align-items: center; justify-content: center;
-
-#### 21.将一个width300，height300实现在屏幕上垂直水平居中
-1.父级元素设置text-align：center，然后设置line-height和vertical-align使其垂直居中，最后设置font-size：0消除近似居中的bug。
-
-2.父级元素设置display：table-cell，vertical-align：middle达到水平垂直居中。
-
-3.采用绝对定位，原理是子绝父相，父元素设置position：relative，子元素设置position：absolute，然后通过transform或margin组
-合使用达到垂直居中效果，设置top：50%，left：50%，transform：translate（-50%，-50%）。
-
-4.绝对居中，原理是当top,bottom为0时，margin-top&bottom设置auto的话会无限延伸沾满空间并平分，当left，right为0时，
-margin-left&right设置auto会无限延伸占满空间并平分。
-
-5.采用flex，父元素设置display：flex，子元素设置margin：auto。
-
-6.视窗居中，vh为视口单位，50vh即是视口高度的50/100，设置margin：50vh auto 0，transform：translate(-50%)
+#### 21.
 
 #### 22.块元素和行元素
-块元素：独占一行，并且有自动填满父元素，可以设置margin和padding以及高度和宽度。
+块元素：独占一行，并且自动填满父元素，可以设置margin和padding以及高度和宽度。
 
 行元素：不会独占一行，width和height会失效，并且在垂直方向的padding和margin会失效。
 
@@ -483,7 +483,31 @@ for(var i=0;i<5;i++){
 }
 ````
 
-#### 53.vue的生命周期
+#### 53.事件委托以及冒泡
+* 事件委托是利用冒泡阶段的运行机制来实现的，就是把一个元素响应事件的函数委托到另一个元素，一般是把一组元素的事件委托到他
+的父元素上，委托的优点是减少内存消耗，节约效率，动态绑定事件。
+* 事件冒泡，就是元素自身的事件被触发后，如果父元素有相同的事件，如onclick事件，那么元素本身的触发状态就会传递，也就是冒
+到父元素，父元素的相同事件也会一级一级根据嵌套关系向外触发，直到document/window，冒泡过程结束。
+
+#### 54.ES6的一些新特性
+ES6在变量的声明和定义方面增加了let、const声明变量，有局部变量的概念，赋值中有比较吸引人的结构赋值，同时ES6对字符串、 数
+组、正则、对象、函数等拓展了一些方法，如字符串方面的模板字符串、函数方面的默认参数、对象方面属性的简洁表达方式，ES6也引
+入了新的数据类型symbol，新的数据结构set和map,symbol可以通过typeof检测出来，为解决异步回调问题，引入了promise和 generator，
+还有最为吸引人了实现Class和模块，通过Class可以更好的面向对象编程，使用模块加载方便模块化编程，当然考虑到 浏览器兼容性，
+我们在实际开发中需要使用babel进行编译。
+
+重要的特性：
+1. 块级作用域：ES5只有全局作用域和函数作用域，块级作用域的好处是不再需要立即执行的函数表达式，循环体中的闭包不再有问题。
+2. rest参数：用于获取函数的多余参数，这样就不需要使用arguments对象了。
+3. promise:一种异步编程的解决方案，比传统的解决方案回调函数和事件更合理强大。
+4. 模块化：其模块功能主要有两个命令构成，export和import，export命令用于规定模块的对外接口，import命令用于输入其他模块提
+供的功能。
+
+#### 55.箭头函数和function有什么区别
+箭头函数根本就没有绑定自己的this，在箭头函数中调用 this 时，仅仅是简单的沿着作用域链向上寻找，找到最近的一个 this 拿来使
+用。
+
+#### 56.vue的生命周期
 Vue实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模板、挂载Dom、渲染→更新→渲染、销毁等一系列过程，我们称
 这是Vue的生命周期。通俗说就是Vue实例从创建到销毁的过程，就是生命周期。每一个组件或者实例都会经历一个完整的生命周期，总共
 分为三个阶段：初始化、运行中、销毁。
@@ -501,26 +525,41 @@ dom树利用diff算法进行对比之后重新渲染，一般不做什么事儿�
 计时器、清除非指令绑定的事件等等。组件的数据绑定、监听...去掉后只剩下dom空壳，这个时候，执行destroyed，在这里做善后工作
 也可以。
 
-#### 54.事件委托以及冒泡
-* 事件委托是利用冒泡阶段的运行机制来实现的，就是把一个元素响应事件的函数委托到另一个元素，一般是把一组元素的事件委托到他
-的父元素上，委托的优点是减少内存消耗，节约效率，动态绑定事件。
-* 事件冒泡，就是元素自身的事件被触发后，如果父元素有相同的事件，如onclick事件，那么元素本身的触发状态就会传递，也就是冒
-到父元素，父元素的相同事件也会一级一级根据嵌套关系向外触发，直到document/window，冒泡过程结束。
+#### 57.vue双向绑定原理
+什么是数据双向绑定？Vue是一个MVVM框架，数据绑定简单来说，就是当数据发生变化时，相应的视图会进行更新，当视图更新时，数据
+也会跟着变化。Vue.js则是通过数据劫持以及结合发布者-订阅者来实现的，数据劫持是利用ES5的Object.defineProperty(obj, key, val)
+来劫持各个属性的的setter以及getter，在数据变动时发布消息给订阅者，从而触发相应的回调来更新视图。
 
-#### 55.ES6的一些新特性
-ES6在变量的声明和定义方面增加了let、const声明变量，有局部变量的概念，赋值中有比较吸引人的结构赋值，同时ES6对字符串、 数
-组、正则、对象、函数等拓展了一些方法，如字符串方面的模板字符串、函数方面的默认参数、对象方面属性的简洁表达方式，ES6也引
-入了新的数据类型symbol，新的数据结构set和map,symbol可以通过typeof检测出来，为解决异步回调问题，引入了promise和 generator，
-还有最为吸引人了实现Class和模块，通过Class可以更好的面向对象编程，使用模块加载方便模块化编程，当然考虑到 浏览器兼容性，
-我们在实际开发中需要使用babel进行编译。
-
-重要的特性：
-1. 块级作用域：ES5只有全局作用域和函数作用域，块级作用域的好处是不再需要立即执行的函数表达式，循环体中的闭包不再有问题。
-2. rest参数：用于获取函数的多余参数，这样就不需要使用arguments对象了。
-3. promise:一种异步编程的解决方案，比传统的解决方案回调函数和事件更合理强大。
-4. 模块化：其模块功能主要有两个命令构成，export和import，export命令用于规定模块的对外接口，import命令用于输入其他模块提
-供的功能。
-
-#### 56.箭头函数和function有什么区别
-箭头函数根本就没有绑定自己的this，在箭头函数中调用 this 时，仅仅是简单的沿着作用域链向上寻找，找到最近的一个 this 拿来使
-用。
+实现最基础的数据绑定：
+````html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <input type="text" id="inp">
+    <script>
+        var obj  = {};
+        var demo = document.querySelector('#demo')
+        var inp = document.querySelector('#inp')
+        Object.defineProperty(obj, 'name', {
+            get: function() {
+                return val;
+            },
+            set: function (newVal) {//当该属性被赋值的时候触发
+                inp.value = newVal;
+                demo.innerHTML = newVal;
+            }
+        })
+        inp.addEventListener('input', function(e) {
+            // 给obj的name属性赋值，进而触发该属性的set方法
+            obj.name = e.target.value;
+        });
+        obj.name = 'hui';//在给obj设置name属性的时候，触发了set这个方法
+    </script>
+</body>
+</html>
+````
