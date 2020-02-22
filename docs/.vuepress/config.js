@@ -23,16 +23,21 @@ module.exports = {
         sidebar:{
             '/webLibrary/': [
                 {
+                    title: '目录',
+                    collapsable: false,
+                },
+                {
                     title: 'JavaScript',
                     collapsable: true,
                     children: [
-                        'jsChildLibrary/dateChange',
-                        'jsChildLibrary/commonAlgorithm',
                         'jsChildLibrary/prototypeChain',
                         'jsChildLibrary/direction',
-                        'jsChildLibrary/arrayOperation',
-                        'jsChildLibrary/es6',
+                        'jsChildLibrary/closures',
                         'jsChildLibrary/object',
+                        'jsChildLibrary/arrayOperation',
+                        'jsChildLibrary/commonAlgorithm',
+                        'jsChildLibrary/dateChange',
+                        'jsChildLibrary/es6',
                         'jsChildLibrary/jsValid',
                     ]
                 },
