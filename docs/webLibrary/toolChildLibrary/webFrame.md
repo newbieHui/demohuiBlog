@@ -1,4 +1,4 @@
-# 组件
+# 项目工具
 ---
 ### 1.Vue组件库
 * [Element-ui](http://element-cn.eleme.io/#/zh-CN)
@@ -33,3 +33,12 @@
 ### 8.Web样式
 * [前端配色](https://colorhunt.co/)
 * [Bootstrap](http://www.bootcss.com/)
+
+### 9.浏览器支持查询
+* [查询浏览器是否支持某种技术](http://caniuse.com/)
+
+### 10.CDN加速服务
+* [免费的前端开源项目CDN加速服务](https://www.bootcdn.cn/)
+
+### 11.淘宝npm源
+* [淘宝npm源官方地址](http://npm.taobao.org/)

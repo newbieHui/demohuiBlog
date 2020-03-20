@@ -146,9 +146,9 @@ module.exports = {
             '/projectLibrary/': [
                 {
                     title: 'Vue项目',
-                    collapsable: true,
+                    collapsable: false,
                     children: [
-                        'vueChildLibrary/translateOnline'
+
                     ]
                 },
                 {

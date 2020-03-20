@@ -28,4 +28,17 @@ console.log(object2.property1);
 
 > 2019/3/25 17:35
 
-### 2.Object.defineProperty()：
+### 2.Object.prototype.toString.call(..)：
+所有typeof返回值为"object"的对象(如数组)都包含一个内部属性[[class]](我们可以将它看作一个内部的分类，而非传统意义上的面向对象意义上的
+类)。这个属性无法直接访问，一般通过Object.prototype.toString.call(..)来查看:
+````js
+Object.prototype.toString.call([1,2,3]);   // "[object Array]"
+Object.prototype.toString.call(/regex-litera/i);   // "[object RegExp]"
+Object.prototype.toString.call(null);   // "[object Null]"
+Object.prototype.toString.call(undefined);   // "[object Undefined]"
+Object.prototype.toString.call('abc');   // "[object String]"
+Object.prototype.toString.call(42);   // "[object Number]"
+Object.prototype.toString.call(true);   // "[object Boolean]"
+````
+
+### 3.Object.defineProperty()：
