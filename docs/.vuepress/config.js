@@ -145,10 +145,21 @@ module.exports = {
             ],
             '/projectLibrary/': [
                 {
+                    title: '目录',
+                    collapsable: false,
+                },
+                {
                     title: '联盟官网',
                     collapsable: true,
                     children: [
                         'lolwebsite/projectInstruction',
+                    ]
+                },
+                {
+                    title: '在线翻译',
+                    collapsable: true,
+                    children: [
+                        'translationOnline/projectInstruction',
                     ]
                 },
             ],
