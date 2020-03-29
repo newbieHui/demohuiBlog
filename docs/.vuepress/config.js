@@ -145,18 +145,10 @@ module.exports = {
             ],
             '/projectLibrary/': [
                 {
-                    title: 'Vue项目',
-                    collapsable: false,
-                    children: [
-
-                    ]
-                },
-                {
-                    title: 'React项目',
+                    title: '联盟官网',
                     collapsable: true,
                     children: [
-                        'reactChildLibrary/firstReact',
-                        'reactChildLibrary/reactFamilyBucket',
+                        'lolwebsite/projectInstruction',
                     ]
                 },
             ],
