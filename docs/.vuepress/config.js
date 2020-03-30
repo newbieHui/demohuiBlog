@@ -162,6 +162,13 @@ module.exports = {
                         'translationOnline/projectInstruction',
                     ]
                 },
+                {
+                    title: '头条创作',
+                    collapsable: true,
+                    children: [
+                        'informationPlatform/projectInstruction',
+                    ]
+                },
             ],
             '/essayLibrary/': [
                 {
