@@ -3,8 +3,8 @@
 
 ### 项目描述
 
-该项目计划使用vue脚手架(vue-cli)搭建一个完整的头条新闻创作平台，主要功能包括登录验证、头条新闻创作、头条新闻发布、头条新
-闻删除、以往新闻修改等。计划使用webpack打包发布项目。
+该项目计划使用vue脚手架(vue-cli)，iview组件库和vue-quill-editor富文本编辑器搭建一个完整的头条新闻创作平台，主要功能包括
+登录验证、头条新闻创作、头条新闻发布、头条新闻删除、以往新闻修改等。计划使用webpack打包发布项目。
 
 ### 项目创建
 1.安装webpack：
@@ -39,7 +39,72 @@
 
 ![网站预览](/img/informationPlatformImg/informationPlatform5.png)
 
+6.安装iview:
+
+在命令行输入 npm install iview --save 安装完成后在入口文件main.js文件进行如下配置：
+````js
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'   // 使用 CSS
+
+Vue.config.productionTip = false;
+Vue.use(iView);
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
+````
+
+7.安装vue-quill-editor:
+
+在命令行中输入 npm install vue-quill-editor -S 安装完成后在入口文件main.js文件进行如下配置：
+````js
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'   // 使用 CSS
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.snow.css'
+
+Vue.config.productionTip = false;
+Vue.use(iView);
+Vue.use(VueQuillEditor);
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
+````
 ### 项目预览
+1.登陆页面
+
+![网站预览](/img/informationPlatformImg/informationPlatform6.png)
+
+2.主页面
+
+![网站预览](/img/informationPlatformImg/informationPlatform7.png)
+
+3.创作页面
+
+![网站预览](/img/informationPlatformImg/informationPlatform8.png)
+
+4.管理页面
+
+![网站预览](/img/informationPlatformImg/informationPlatform9.png)
+
+5.修改页面
+
+![网站预览](/img/informationPlatformImg/informationPlatform10.png)
 
 ### 项目代码
 
