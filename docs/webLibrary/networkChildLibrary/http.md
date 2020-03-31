@@ -32,4 +32,4 @@ Content-Type，内容类型，一般是指网页中存在的Content-Type，用�
 * 301 - 资源（网页等）被永久转移到其它URL
 * 404 - 请求的资源（网页等）不存在
 * 500 - 内部服务器错误
-![httpErrorCode](/img/httpErrorCode.png)
+![httpErrorCode](/img/httpImg/httpErrorCode.png)

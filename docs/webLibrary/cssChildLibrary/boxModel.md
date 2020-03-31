@@ -3,7 +3,7 @@
 盒子模型是css中核心的基础知识，只有掌握了盒子模型才能更好的进行页面布局。我们可以将页面的每个元素看成一个矩形盒子，每个盒子中心有一个内容区，
 内容区周围有可选的内边距，外边距和边框，如下图所示：
 
-![boxModel](/img/boxModel.png)
+![boxModel](/img/boxModel/boxModel.png)
 
 为了更好的理解盒子模型我们先来看几个基本概念：
 
@@ -44,8 +44,8 @@ border-width | 设置元素所有边框宽度，或分别设置各边边框宽�
 
 ### 4.css外边距合并：
 两个垂直外边距相遇时，将合并成一个外边距，合并后的外边距取发生合并的外边距较大者。如下图所示：
-![外边距合并1](/img/boxModel1.png)
-![外边距合并2](/img/boxModel2.png)
+![外边距合并1](/img/boxModel/boxModel1.png)
+![外边距合并2](/img/boxModel/boxModel2.png)
 
 **只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。**
 
@@ -56,11 +56,11 @@ border-width | 设置元素所有边框宽度，或分别设置各边边框宽�
 
 如下图，为W3C盒模型(标准盒模型)，盒子模型范围包括margin，border，padding，content，并且content部分不包含其他部分。
 
-![标准盒模型](/img/boxModel3.png)
+![标准盒模型](/img/boxModel/boxModel3.png)
 
 如下图，为IE盒模型(怪异盒模型)，盒子模型范围包括margin，border，padding，content，**IE盒子模型的content部分包含了padding和border**。
 
-![怪异盒模型](/img/boxModel4.png)
+![怪异盒模型](/img/boxModel/boxModel4.png)
 
 ### 6.CSS3属性box-sizing:
 既然知道了盒子模型有标准和怪异两种，那么我们怎么通过css来设置两种盒模型？这里就要用到css3的box-sizing属性。

@@ -39,7 +39,7 @@ function demo (){
 }
 demo();
 ```
-![useStrict](/img/useStrict.png)
+![useStrict](/img/directionImg/useStrict.png)
 
 如图，运行后报错，因为在严格模式下，此时的this为undefined。
 

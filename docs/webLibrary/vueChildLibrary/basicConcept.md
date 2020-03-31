@@ -19,7 +19,7 @@ controller控制器，是视图和数据模型之间的桥梁，用来处理业�
 * MVVM的全称是Model-View-ViewModel。model数据模型；view视图；viewModel视图模型。MVVM通过数据双向绑定让数据自动地双向同步。
 
 ### 4.vue生命周期钩子
-![vuelifecycle](/img/vuelifecycle.png)
+![vuelifecycle](/img/vueChildLibraryImg/vuelifecycle.png)
 
 * beforeCreate
 
@@ -137,7 +137,7 @@ controller控制器，是视图和数据模型之间的桥梁，用来处理业�
 
 2.实现跑马灯效果
 
-![strMove](/img/strMove.png)
+![strMove](/img/vueChildLibraryImg/strMove.png)
 ````html
 <!DOCTYPE html>
 <html lang="en">

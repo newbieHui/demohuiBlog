@@ -24,7 +24,7 @@ console.log(demo.name);   // szhui
 new Date()创建的对象原型是Date.prototype。
 
 比较特殊的一个是Object.prototype，它是一个没有原型的对象，不继承任何属性。
-![prototype](/img/prototype.png)
+![prototype](/img/prototypeChain/prototype.png)
 
 ### 3.`__proto__`：
 __proto__是对象的内部原型，这是每一个JavaScript对象(除了 null )都具有的一个属性，这个属性会指向该对象的原型。
@@ -72,7 +72,7 @@ ___
 Object.prototype.__proto__ === null  // true
 ```
 已经到顶了，为null。
-![proto](/img/proto.png)
+![proto](/img/prototypeChain/proto.png)
 
 实例对象和构造函数都可以指向原型。
 
@@ -84,7 +84,7 @@ function Person() {
 }
 console.log(Person === Person.prototype.constructor);   // true
 ```
-![constructor](/img/constructor.png)
+![constructor](/img/prototypeChain/constructor.png)
 ```js
 function Person() {
 
@@ -159,6 +159,6 @@ console.log(demo2.name);   //szh
 属性的，这时就会从demo1的原型demo1.__proto__(也就是Person.prototype)中查找。
 
 所以总的关系图如下图所示，图中由相互关联的原型组成的链状结构就是原型链，也就是图中黑色的线：
-![prototypeChain](/img/prototypeChain.png)
+![prototypeChain](/img/prototypeChain/prototypeChain.png)
 
 > 2019/3/7 17:50

@@ -23,9 +23,9 @@ Axios是一个基于promise的HTTP库，可以用在浏览器和node.js中。
 在客户端和服务器之间进行请求-响应时，两种最常被用到的方法是：GET 和 POST。
 
 #### GET - 从指定的资源请求数据。
-![GET请求](/img/httpGet.png)
+![GET请求](/img/axiosBasicImg/httpGet.png)
 #### POST  - 向指定的资源提交要被处理的数据。
-![POST请求](/img/httpPost.png)
+![POST请求](/img/axiosBasicImg/httpPost.png)
 
 ### axios中GET,POST请求
 * 执行GET请求：
