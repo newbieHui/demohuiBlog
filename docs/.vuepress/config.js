@@ -39,6 +39,7 @@ module.exports = {
                         'jsChildLibrary/dateChange',
                         'jsChildLibrary/es6',
                         'jsChildLibrary/jsValid',
+                        'jsChildLibrary/codeOptimization',
                     ]
                 },
                 {
