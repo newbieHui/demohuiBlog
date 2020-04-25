@@ -170,6 +170,14 @@ module.exports = {
                         'informationPlatform/projectInstruction',
                     ]
                 },
+                {
+                    title: 'vue组件封装',
+                    collapsable: true,
+                    children: [
+                        'vueComponentsDemo/projectInitialization',
+                        'vueComponentsDemo/buttonComponentsDemo',
+                    ]
+                },
             ],
             '/essayLibrary/': [
                 {

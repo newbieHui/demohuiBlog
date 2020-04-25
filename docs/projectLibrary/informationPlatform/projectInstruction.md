@@ -22,6 +22,9 @@
 3.使用vue-cli来构建项目:
 
 进入文件夹，输入 vue init webpack projectName，其中projectName为新项目文件名。安装完成后进入项目使用 npm install安装依赖。 
+> 如果npm安装很慢可以使用淘宝镜像，直接使用以下命令进行安装
+
+> npm install --registry=https://registry.npm.taobao.org
 
 ![网站预览](/img/informationPlatformImg/informationPlatform3.png)
 
