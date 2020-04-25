@@ -165,37 +165,6 @@ Button.vue
 
 Button.vue
 ````css
-<style lang="scss">
-  .demo-button{
-    display: inline-block;
-    line-height: 1;
-    white-space: nowrap;
-    cursor: pointer;
-    background: #ffffff;
-    border: 1px solid #dcdfe6;
-    color: #606266;
-    -webkit-appearance: none;
-    text-align: center;
-    box-sizing: border-box;
-    outline: none;
-    margin: 0;
-    transition: 0.1s;
-    font-weight: 500;
-    //禁止元素的文字被选中
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: 4px;
-    &:hover,
-    &:hover{
-      color: #409eff;
-      border-color: #c6e2ff;
-      background-color: #ecf5ff;
-    }
-  }
   .demo-button-primary{
     color:#fff;
     background-color: #409eff;
@@ -251,7 +220,6 @@ Button.vue
       color: #fff;
     }
   }
-</style>
 ````
 
 设置不同的type类型有不同的样式，效果如下图
@@ -514,7 +482,8 @@ Button.vue
 ````vue
 <template>
   <button class="demo-button" :class="[`demo-button-${type}`,{'is-plain':plain,
-  'is-round':round,'is-circle':circle,'is-disabled':disabled}]" :disabled="disabled" @click="handleClick">
+  'is-round':round,'is-circle':circle,'is-disabled':disabled}]" :disabled="disabled" 
+  @click="handleClick">
     <i v-if="icon" :class="`demo-icon-${icon}`"></i>
     <!-- 如果没传入文本插槽，则不显示span内容 -->
     <span v-if="$slots.default"><slot></slot></span>

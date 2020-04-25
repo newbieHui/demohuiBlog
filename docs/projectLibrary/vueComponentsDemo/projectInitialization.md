@@ -35,5 +35,9 @@ cnpm install node-sass --sava-dev
 
 * 使用scss时候在所在的style样式标签上添加lang=”scss”即可应用对应的语法，否则报错
 
+### 4.button组件预览
+
+![组件预览](/img/vueComponentsDemoImg/buttonShow.png)
+
 
 
