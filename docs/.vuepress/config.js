@@ -140,7 +140,6 @@ module.exports = {
                         'toolChildLibrary/webFrame',
                         'toolChildLibrary/studyManual',
                         'toolChildLibrary/codeTool',
-                        'toolChildLibrary/interview',
                     ]
                 },
             ],
