@@ -177,6 +177,12 @@ module.exports = {
                         'vueComponentsDemo/projectInitialization',
                         'vueComponentsDemo/buttonComponentsDemo',
                     ]
+                },{
+                    title: '样例',
+                    collapsable: true,
+                    children: [
+                        'mgrDemo/mgrDemo001',
+                    ]
                 },
             ],
             '/essayLibrary/': [
