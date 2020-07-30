@@ -95,6 +95,8 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'elmChildLibrary/formInput',
+                        'elmChildLibrary/elUpload',
+                        'elmChildLibrary/selectData',
                     ]
                 },
                 {
@@ -176,12 +178,6 @@ module.exports = {
                     children: [
                         'vueComponentsDemo/projectInitialization',
                         'vueComponentsDemo/buttonComponentsDemo',
-                    ]
-                },{
-                    title: '样例',
-                    collapsable: true,
-                    children: [
-                        'mgrDemo/mgrDemo001',
                     ]
                 },
             ],
