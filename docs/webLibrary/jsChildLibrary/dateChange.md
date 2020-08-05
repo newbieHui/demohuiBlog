@@ -53,4 +53,21 @@ function getDetailTime(num){
     }
 ```
 
+### 4.获取指定时间('年-月-日')几天前后的日期:
+````js
+//date 指定日期
+//day 天数
+getNextDate:function(date,day) {
+    var dd = new Date(date);
+    dd.setDate(dd.getDate() + day);
+    var y = dd.getFullYear();
+    var m = dd.getMonth() + 1 < 10 ? "0" + (dd.getMonth() + 1) : dd.getMonth() + 1;
+    var d = dd.getDate() < 10 ? "0" + dd.getDate() : dd.getDate();
+    return y + "-" + m + "-" + d;
+},
+
+console.log(getNextDate('2019-11-10',2));   //2019-11-12
+console.log(getNextDate('2019-11-1',-2));   //2019-10-30
+````
+
 > 2019/3/6 16:45

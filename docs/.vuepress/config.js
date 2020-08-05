@@ -94,9 +94,9 @@ module.exports = {
                     title: 'Element-ui',
                     collapsable: true,
                     children: [
-                        'elmChildLibrary/formInput',
+                        'elmChildLibrary/elInput',
                         'elmChildLibrary/elUpload',
-                        'elmChildLibrary/selectData',
+                        'elmChildLibrary/elTable',
                     ]
                 },
                 {
