@@ -136,6 +136,7 @@ this.$nextTick(() => {
 ````
 
 ### 4.el-table样式
+___
 ````css
 /*1.表格添加fixed固定列后鼠标悬停高亮背景颜色修改:*/
 .el-table__body .el-table__row.hover-row td{
@@ -165,5 +166,18 @@ this.$nextTick(() => {
 }
 ````
 
+### 5.el-table固定列fix
+列设定 fixed="right"或 fixed="left"后，有时会出现错位问题。通过更新DOM来解决这个问题：
+````vue
+<el-table :data="tableData" ref="multipleTable"></el-table>
+````
+___
+
+````js
+// 数据请求成功并赋值给table后立刻获取更新后的DOM
+this.$nextTick(() => {
+    this.$refs.multipleTable.doLayout();
+});
+````
 
 

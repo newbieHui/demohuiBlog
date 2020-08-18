@@ -36,10 +36,18 @@ module.exports = {
                         'jsChildLibrary/object',
                         'jsChildLibrary/arrayOperation',
                         'jsChildLibrary/commonAlgorithm',
+                        'jsChildLibrary/regularExpressions',
                         'jsChildLibrary/dateChange',
                         'jsChildLibrary/es6',
                         'jsChildLibrary/jsValid',
                         'jsChildLibrary/codeOptimization',
+                    ]
+                },
+                {
+                    title: 'TypeScript',
+                    collapsable: true,
+                    children: [
+                        'tsChildLibrary/basicKnowledge',
                     ]
                 },
                 {
