@@ -38,9 +38,16 @@ module.exports = {
                         'jsChildLibrary/commonAlgorithm',
                         'jsChildLibrary/regularExpressions',
                         'jsChildLibrary/dateChange',
-                        'jsChildLibrary/es6',
                         'jsChildLibrary/jsValid',
                         'jsChildLibrary/codeOptimization',
+                    ]
+                },
+                {
+                    title: 'ES6',
+                    collapsable: true,
+                    children: [
+                        'es6ChildLibrary/es6Basis',
+                        'es6ChildLibrary/es6Class',
                     ]
                 },
                 {
@@ -105,6 +112,7 @@ module.exports = {
                         'elmChildLibrary/elInput',
                         'elmChildLibrary/elUpload',
                         'elmChildLibrary/elTable',
+                        'elmChildLibrary/elTree',
                     ]
                 },
                 {
@@ -209,6 +217,13 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'musicChildLibrary/music1'
+                    ]
+                },
+                {
+                    title: 'Experience',
+                    collapsable: true,
+                    children: [
+                        // 'experienceLibrary/rtdl.md'
                     ]
                 },
             ]

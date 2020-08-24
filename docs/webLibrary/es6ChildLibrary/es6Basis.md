@@ -1,4 +1,4 @@
-# es6学习笔记
+# ES6 基础
 ---
 > ES6，全称ECMAScript 6.0，是 JaveScript 的下一个版本标准，2015.06 发版。
 
