@@ -2,11 +2,11 @@
 ---
 
 ### 1.webstorm
-A.webstorm下载：
+#### A.webstorm下载：
 
 下载地址：[webstorm](https://www.jetbrains.com/webstorm/)
 
-B.webstorm激活：
+#### B.webstorm激活：
  
 1.需要在host(C:\Windows\System32\drivers\etc)文件末尾添加以下两行代码:
 ````
@@ -18,13 +18,20 @@ B.webstorm激活：
 * http://www.lookdiv.com/   密钥:lookdiv.com
 * http://medeming.com/
 
-C.webstorm快捷键：
+#### C.webstorm快捷键：
 快捷键 | 描述 | 系统 |
 :-: | :-: | :-: |
 ctrl+alt+l | 代码自动格式化 | windows|
 
+#### D.IDEA主题：
+* [IDEA主题](http://color-themes.com/?view=index)
 
-### 2.git
+### 2.visual studio code
+
+下载地址：[vscode](https://code.visualstudio.com/)
+
+
+### 3.git
 A.解决git下载慢的问题:
 
 [使用淘宝镜像网站](https://npm.taobao.org/mirrors/git-for-windows/)

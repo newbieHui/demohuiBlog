@@ -10,10 +10,13 @@
 * [Ant Design实战教程](https://www.yuque.com/ant-design/course)
 * [从零搭建-React全家桶](https://github.com/brickspert/blog/issues/1)
 
-### 3.图表库
-* [ECharts](https://echarts.baidu.com/index.html)
+### 3.小程序前端框架
+* [mpvue](http://mpvue.com/)
 
-### 4.web开发框架
+### 4.手机端
+* [uni-app](https://uniapp.dcloud.io/README)
+
+### 5.web开发框架
 * [飞冰](https://alibaba.github.io/ice/)
 * [Weex](https://weex.apache.org/zh/guide/introduction.html)
 * [koa](https://koa.bootcss.com/)
@@ -21,11 +24,8 @@
 * [nx-admin管理系统](https://mgbq.github.io/vue-permission/#/dashboard/dashboard)
 * [VuePress](http://caibaojian.com/vuepress/guide/)
 
-### 5.小程序前端框架
-* [mpvue](http://mpvue.com/)
-
-### 6.IDEA
-* [IDEA主题](http://color-themes.com/?view=index)
+### 6.图表库
+* [ECharts](https://echarts.baidu.com/index.html)
 
 ### 7.Icon库
 * [阿里Icon](https://www.iconfont.cn/)
@@ -34,7 +34,7 @@
 * [前端配色](https://colorhunt.co/)
 * [Bootstrap](http://www.bootcss.com/)
 
-### 9.浏览器支持查询
+###9.浏览器支持查询
 * [查询浏览器是否支持某种技术](http://caniuse.com/)
 
 ### 10.CDN加速服务

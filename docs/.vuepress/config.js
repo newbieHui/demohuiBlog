@@ -156,8 +156,9 @@ module.exports = {
                     collapsable: true,
                     children: [
                         'toolChildLibrary/webFrame',
-                        'toolChildLibrary/studyManual',
                         'toolChildLibrary/codeTool',
+                        'toolChildLibrary/fontEndTool',
+                        'toolChildLibrary/studyManual',
                         'toolChildLibrary/interview',
                     ]
                 },
