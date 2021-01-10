@@ -217,7 +217,7 @@ module.exports = {
                     title: 'Music',
                     collapsable: true,
                     children: [
-                        'musicChildLibrary/music1'
+                        'musicChildLibrary/lizhi'
                     ]
                 },
                 {
