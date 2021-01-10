@@ -23,3 +23,5 @@ git push -f git@github.com:newbiehui/newbiehui.github.io.git master
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 cd -
+
+# Terminal中使用 "npm run deploy" 执行

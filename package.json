@@ -13,7 +13,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "deploy": "start deploy.sh"
   },
   "author": "szhui",
   "license": "ISC"
